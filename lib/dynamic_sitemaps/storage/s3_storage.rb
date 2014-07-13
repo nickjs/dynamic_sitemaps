@@ -16,7 +16,7 @@ module DynamicSitemaps
     protected
     def move_to_s3(temp_file, destination)
       puts "Moved #{temp_file} > #{destination}"
-      # s3.buckets[DynamicSitemaps.bucket_name].objects[destination].write(data: File.open(temp_file), acl: :public_read)
+      s3.buckets[DynamicSitemaps.bucket_name].objects[destination].write(data: File.open(temp_file), acl: :public_read)
     end
 
     def s3
